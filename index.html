@@ -7,6 +7,7 @@
     <title>MEAT-Бургерная Краснодар</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <script type='text/javascript' src='js/jquery-1.9.0.min.js'></script>
 </head>
 <body>
     <header class="header">
@@ -87,7 +88,7 @@
                             <p class="text-burger name-burger">Pampa burger</p>
                             <p class="text-burger">270 грамм</p>
                             <p class="text-burger-ingredients text-burger-animat"><a href="#ingredients-blackout">Состав</a></p>
-                            <p class="text-burger-buy text-burger-animat"><a href="">Заказать 210р</a></p>
+                            <p class="text-burger-buy text-burger-animat"><a href="#open-buy">Заказать 210р</a></p>
                         </div>
                     </li>
                     <li class="menu-item">
@@ -96,7 +97,7 @@
                             <p class="text-burger name-burger">Gringo</p>
                             <p class="text-burger">295 грамм</p>
                             <p class="text-burger-ingredients text-burger-animat"><a href="#ingredients-blackout">Состав</a></p>
-                            <p class="text-burger-buy text-burger-animat"><a href="">Заказать 250р</a></p>
+                            <p class="text-burger-buy text-burger-animat"><a href="#open-buy">Заказать 250р</a></p>
                         </div>
                     </li>
                     <li class="menu-item">
@@ -105,7 +106,7 @@
                             <p class="text-burger name-burger">Galo veilo</p>
                             <p class="text-burger">290 грамм</p>
                             <p class="text-burger-ingredients text-burger-animat"><a href="#ingredients-blackout">Состав</a></p>
-                            <p class="text-burger-buy text-burger-animat"><a href="">Заказать 240р</a></p>
+                            <p class="text-burger-buy text-burger-animat"><a href="#open-buy">Заказать 240р</a></p>
                         </div>
                     </li>
                 </ul>
@@ -116,7 +117,7 @@
                             <p class="text-burger name-burger">Campereada</p>
                             <p class="text-burger">380 грамм</p>
                             <p class="text-burger-ingredients text-burger-animat"><a href="#ingredients-blackout">Состав</a></p>
-                            <p class="text-burger-buy text-burger-animat"><a href="">Заказать 340р</a></p>
+                            <p class="text-burger-buy text-burger-animat"><a href="#open-buy">Заказать 340р</a></p>
                         </div>
                     </li>
                     <li class="menu-item">
@@ -125,7 +126,7 @@
                             <p class="text-burger name-burger">Maragato</p>
                             <p class="text-burger">295 грамм</p>
                             <p class="text-burger-ingredients text-burger-animat"><a href="#ingredients-blackout">Состав</a></p>
-                            <p class="text-burger-buy text-burger-animat"><a href="">Заказать 260р</a></p>
+                            <p class="text-burger-buy text-burger-animat"><a href="#open-buy">Заказать 260р</a></p>
                         </div>
                     </li>
                     <li class="menu-item">
@@ -134,7 +135,7 @@
                             <p class="text-burger name-burger">Chimango</p>
                             <p class="text-burger">290 грамм</p>
                             <p class="text-burger-ingredients text-burger-animat"><a href="#ingredients-blackout">Состав</a></p>
-                            <p class="text-burger-buy text-burger-animat"><a href="">Заказать 300р</a></p>
+                            <p class="text-burger-buy text-burger-animat"><a href="#open-buy">Заказать 300р</a></p>
                         </div>
                     </li>
                 </ul>
@@ -142,16 +143,17 @@
                 <div class="ingredients-blackout" id="ingredients-blackout">
                     <div class="ingredients-open">
                         <a href="#menu" class="close">&#10008;</a>
-                        <p>Свежая булочка</p>
-                        <p>Красный соус</p>
-                        <p>Свежие томаты</p>
-                        <p>Сыр</p>
-                        <p>250 грамм мраморной говядины</p>
-                        <p>Хрустящий лук</p>
-                        <p>Лист салата</p>
-                        <p>Соус от шеф-повара</p>
+                        <ul class="ingredients-list">
+                            <li class="ingredients-text">Свежая булочка</li>
+                            <li class="ingredients-text">Красный соус</li>
+                            <li class="ingredients-text">Свежие томаты</li>
+                            <li class="ingredients-text">Сыр</li>
+                            <li class="ingredients-text">250 грамм мраморной говядины</li>
+                            <li class="ingredients-text">Хрустящий лук</li>
+                            <li class="ingredients-text">Лист салата</li>
+                            <li class="ingredients-text">Соус от шеф-повара</li>
+                        </ul>
                     </div>
-          
                 </div>
                 <h3 class="menu-title">
                     Напитки
@@ -162,7 +164,7 @@
                         <div class="info-beverages">
                             <p class="text-beverages name-baverages">Bon-aqua</p>
                             <p class="text-beverages">0.5 л</p>
-                            <p class="text-beverages-buy text-burger-animat"><a href="">Заказать 60р</a></p>
+                            <p class="text-beverages-buy text-burger-animat"><a href="#open-buy">Заказать 60р</a></p>
                         </div>
                     </li>
                     <li class="menu-item">
@@ -170,7 +172,7 @@
                         <div class="info-beverages">
                             <p class="text-beverages name-baverages">Coca-cola</p>
                             <p class="text-beverages">0.5 л</p>
-                            <p class="text-beverages-buy text-burger-animat"><a href="">Заказать 90р</a></p>
+                            <p class="text-beverages-buy text-burger-animat"><a href="#open-buy">Заказать 90р</a></p>
                         </div>
                     </li>
                     <li class="menu-item">
@@ -178,7 +180,7 @@
                         <div class="info-beverages">
                             <p class="text-beverages name-baverages">Fanta</p>
                             <p class="text-beverages">0.5 л</p>
-                            <p class="text-beverages-buy text-burger-animat"><a href="">Заказать 90р</a></p>
+                            <p class="text-beverages-buy text-burger-animat"><a href="#open-buy">Заказать 90р</a></p>
                         </div>
                     </li>
                 </ul>
@@ -188,7 +190,7 @@
                         <div class="info-beverages">
                             <p class="text-beverages name-baverages">Sprite</p>
                             <p class="text-beverages">0.5 л</p>
-                            <p class="text-beverages-buy text-burger-animat"><a href="">Заказать 90р</a></p>
+                            <p class="text-beverages-buy text-burger-animat"><a href="#open-buy">Заказать 90р</a></p>
                         </div>
                     </li>
                     <li class="menu-item">
@@ -196,9 +198,21 @@
                         <div class="info-beverages">
                             <p class="text-beverages name-baverages">Rich</p>
                             <p class="text-beverages">1.0 л</p>
-                            <p class="text-beverages-buy text-burger-animat"><a href="">Заказать 140р</a></p>
+                            <p class="text-beverages-buy text-burger-animat"><a href="#open-buy">Заказать 140р</a></p>
                         </div>
                     </li>
+                <div class="buy-blackout" id="open-buy">
+                    <div class="buy-open">
+                        <a href="#menu" class="close">&#10008;</a>
+                        <div class="win-buy">
+                            <div class="minus">-</div>
+                            <input class="input_count" type="text" value="1">
+                            <div class="plus">+</div>
+                            <a class="to-backet"href="">в корзину</a>
+                        </div>
+                    </div>
+                </div>
+                <script src="js/index.js"></script>
             </div>
         </section>
         <section class="section-shares">
@@ -216,13 +230,13 @@
         <div class="container container-footer">
             <div class="footer-about">
                 <a class="footer-about-link text-read" href="">Публичная оферта</a><br>
-                <a class="footer-about-link text-read"" href="">Политика конфиденциальности</a>
-                <p class="footer-about-link text-read""> 2021 <strong>MEAT</strong> Все права защещены</p>
+                <a class="footer-about-link text-read" href="">Политика конфиденциальности</a>
+                <p class="footer-about-link text-read"> 2021 <strong>MEAT</strong> Все права защещены</p>
             </div>
             <div class="footer-contacts">
                 <p class="text-read">Служба поддержки</p>
                 <a class="footer-contacts-link"href="tel:+79280425511">+7(928)-042-55-11</a>
-                <p class="footer-about-link-contacts text-read"">По вопросам и предложениям</p>
+                <p class="footer-about-link-contacts text-read">По вопросам и предложениям</p>
                 <a class="footer-contacts-link"href="mailto:meat-burgerkrd@mail.ru">meat-burgerkrd@mail.ru</a>
             </div>
             <div class="footer-info-pay">

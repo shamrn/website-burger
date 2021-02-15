@@ -49,7 +49,7 @@ ul{
 .header-container{
     display:flex;
     position: fixed;
-    z-index: 1;  /* что бы баннер шапку не хавал */
+    z-index: 1; 
     align-items: center;
     background-color:black;
     width: 100%;
@@ -207,7 +207,7 @@ ul{
     text-align: center;
 }
 
-
+/*     section open ingridients    */
 .ingredients-blackout{
     background: rgba(102, 102, 102, 0.3);
     width: 100%;
@@ -218,11 +218,12 @@ ul{
     display: none;
     z-index: 1;
   }
-  .ingredients-open{
+.ingredients-open{
     width: 40vw;
     height: 25vw;
     text-align: left;
     font-size: 1vw;
+    font-weight: 900;
     padding: 2vw 0vw 0vw 2vw;
     border: .1vw solid;
     border-radius: 5vw;
@@ -234,14 +235,22 @@ ul{
     left: 0;
     margin: auto;
     background: rgba(192, 182, 182,0.8);
-  }
-  .ingredients-blackout:target {display: block;}
-  .close {
+}
+.ingredients-text{
+    padding-top: 1vw;
+}
+.ingredients-list{
+    list-style:disc;
+}
+.ingredients-blackout:target {display: block;}
+.close {
     color:black;
     margin-left: 1vw;
     font-size: 2vw;
     cursor: pointer;
-  }
+}
+
+/*    section bevarages   */
 .menu-bevarages{
     display: flex;
 }
@@ -263,6 +272,68 @@ ul{
     text-align: center;
 }
 
+/*    open buy   */
+
+.buy-blackout{
+    background: rgba(102, 102, 102, 0.3);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 1;
+  }
+.buy-open{
+    width: 25vw;
+    height: 12vw;
+    text-align: left;
+    font-size: 1vw;
+    font-weight: 900;
+    padding: 1.3vw 0vw 0vw 2vw;
+    border: .1vw solid;
+    border-radius: 3vw;
+    color: black;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background: rgba(192, 182, 182,0.8);
+}
+
+.buy-blackout:target {display: block;}
+.close {
+    color:black;
+    margin-left: 0.2vw;
+    font-size: 2vw;
+    cursor: pointer;
+}
+.win-buy{
+    display: flex;
+    padding-top: 1.5vw;
+    justify-content: center;
+    align-items: center;
+}
+.minus,.plus{
+    cursor: pointer;
+    padding-right: 1.3vw;
+    font-size: 2vw;
+}
+.plus{
+    padding-left: 1.3vw;
+}
+.input_count{
+    width: 3vw;
+    opacity: 0.6;
+    border-radius: 0.7vw;
+    text-align: center;
+}
+.to-backet{
+    color: black;
+    font-size: 1.3vw;
+}
 /* menu animations         */
 .text-burger-animat{
     display: block; 
@@ -304,83 +375,6 @@ ul{
 
 
 
-
-/*       menu adaptiv mobile */
-
-@media screen and (max-width: 768px) {
-    .logo-img{
-        width: 25vw;
-    }
-    .nav{
-        overflow-x: scroll;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 20px;
-        margin-bottom: -20px;
-    }
-    .nav-link{
-        font-size: 3.4vw;
-    }
-    .nav-link:hover{ 
-        font-size: 4vw;
-    }
-    .basket-img{
-        width: 15vw;
-    }
-    .basket{
-        bottom: 5%;
-        left: 85%;
-    }
-    .menu-burger{
-        display: block;
-        margin: auto;
-    }
-    .menu-item{
-        justify-content: center;
-    }
-    .burger-img{
-        width: 45vw;
-    }
-    .title{
-        font-size: 7vw;
-        letter-spacing: 1.4vw;
-    }
-    .menu-title{
-        font-size: 5vw;
-    }
-    .name-burger,.name-baverages{
-        font-size: 3.2vw;
-    }
-    .info-burger{
-        font-size: 3vw;
-    }
-    .menu-bevarages{
-        display: block;
-    }
-    .beverages-img{
-        width: 60vw;
-    }
-    .text-burger-ingredients{
-        width: 16vw;
-        border-radius: 1.2vw;
-    }
-    .text-burger-buy{
-        width: 20vw;
-        border-radius: 1.3vw;
-    }
-    .shares-info{
-        display: block;
-    }   
-    .ingredients-open{
-        width: 78vw;
-        height: 40vw;
-        font-size: 1.8vw;
-    }
-    .text-beverages-buy{
-        width: 20vw;
-        border-radius:1.8vw;
-    }
-}
-
 /*    section about us       */
 
 .section-info{
@@ -389,6 +383,7 @@ ul{
     margin-right: auto;
     max-width: 80vw;
     text-align: center;
+    line-height: 3.4vw;
 }
 .text-about{
     letter-spacing: .3vw;
@@ -396,6 +391,9 @@ ul{
 }
 .container-about{
     top: 0%;
+}
+.text-about::first-letter{
+    font-size: 2.4vw;
 }
 
 /*       section footer     */
@@ -423,7 +421,6 @@ ul{
 
 .footer-about-link strong{
     color: #810000;
-    filter: brightness(1000%);
 }
 .footer-contacts{
     margin-left: 3vw;
@@ -461,3 +458,91 @@ ul{
     margin-top: 1.5vw;
     transform: translateX(.4vw);
 }
+
+
+/*       menu adaptiv mobile */
+
+@media screen and (max-width: 768px) {
+    .logo-img{
+        width: 25vw;
+    }
+    .nav{
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 20px;
+        margin-bottom: -20px;
+    }
+    .nav-list{
+        transform: translateY(1.5vw);
+    }
+    .nav-link{
+        font-size: 3.4vw;
+    }
+    .nav-link:hover{ 
+        font-size: 4vw;
+    }
+    .svg-profile{
+        width: 6vw;
+        height: 6vw;
+        margin-right: 1vw;
+    }
+    .basket-img{
+        width: 15vw;
+    }
+    .basket{
+        bottom: 5%;
+        left: 85%;
+    }
+
+
+    .menu-burger{
+        display: block;
+        margin: auto;
+    }
+    .menu-item{
+        justify-content: center;
+    }
+    .burger-img{
+        width: 45vw;
+    }
+    .title{
+        font-size: 7vw;
+        letter-spacing: 1.4vw;
+    }
+    .menu-title{
+        font-size: 5vw;
+    }
+    .name-burger,.name-baverages{
+        font-size: 3.2vw;
+    }
+    .info-burger,.info-beverages{
+        font-size: 3vw;
+    }
+    .text-burger-ingredients{
+        width: 16vw;
+        border-radius: 1.2vw;
+    }
+    .text-burger-buy{
+        width: 20vw;
+        border-radius: 1.3vw;
+    }
+    .shares-info{
+        display: block;
+    }   
+    .ingredients-open{
+        width: 78vw;
+        height: 40vw;
+        font-size: 1.8vw;
+    }
+    .menu-bevarages{
+        display: block;
+    }
+    .beverages-img{
+        width: 60vw;
+    }
+    .text-beverages-buy{
+        width: 20vw;
+        border-radius:1.8vw;
+    }
+}
+
