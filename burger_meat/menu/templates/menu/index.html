@@ -1,0 +1,39 @@
+ {% extends 'base.html' %}
+ {% load static %}
+ {% block menu %}
+<main>
+        <section class="section-banner">
+            <div class="container container-banner">
+                <img class="img-banner"src="{% static '/img/burgers.jpg' %}" alt="">
+                <h1 class='banner-title'>
+                    M E A T
+                </h1>
+                <h2 class="banner-subtitle">
+                    БУРГЕРНАЯ В КРАСНОДАРЕ
+                </h2>
+        </div>
+        </section>
+        <section class="section-menu">
+            <div class="container container-menu">
+                <h2 class="title" id="menu">
+                    Меню
+                </h2>
+                <h3 class="menu-title">
+                    Бургеры
+                </h3>
+                <ul class="menu-burger">
+                    <li class="menu-item">
+                        <img class="burger-img"src="img/burgers/burger-1.png" alt="">
+                        <div class="info-burger">
+                            <p class="text-burger name-burger">Pampa burger</p>
+                            <p class="text-burger">270 грамм</p>
+                            <p class="text-burger-ingredients text-burger-animat"><a href="#ingredients-blackout">Состав</a></p>
+                            <p class="text-burger-buy text-burger-animat"><a href="#open-buy">Заказать 210р</a></p>
+                        </div>
+                    </li>
+                </ul>
+                <script src="js/index.js"></script>
+            </div>
+        </section>
+    </main>
+{% endblock %}

@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEAT-Бургерная Краснодар</title>
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script type='text/javascript' src="{% static 'js/jquery-1.9.0.min.js' %}"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <a class="logo" href="">
+                <img class="logo-img"src="{% static 'img/logo/logo.jpg' %}" alt="Логотип бургерной">
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#menu">Меню</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#shares">Акции</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Контакты</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Доставка</a>
+                    </li>
+                    <li class="profile">
+                        <svg class="svg-profile"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            >
+                            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                            <polyline points="10 17 15 12 10 7" />
+                            <line x1="15" y1="12" x2="3" y2="12" />
+                            </svg>
+                        <a class="nav-link" href="">
+                            Личный <br>кабинет
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="basket">
+                <a class="basket-link"href="">
+                    <img class="basket-img"src="{% static '/img/logo/basket.png' %}" alt="Корзина">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    {% block menu %} {% endblock %}
+
+    <footer class="footer">
+        <div class="container container-footer">
+            <div class="footer-about">
+                <a class="footer-about-link text-read" href="">Публичная оферта</a><br>
+                <a class="footer-about-link text-read" href="">Политика конфиденциальности</a>
+                <p class="footer-about-link text-read"> 2021 <strong>MEAT</strong> Все права защещены</p>
+            </div>
+            <div class="footer-contacts">
+                <p class="text-read">Служба поддержки</p>
+                <a class="footer-contacts-link"href="tel:+79280425511">+7(928)-042-55-11</a>
+                <p class="footer-about-link-contacts text-read">По вопросам и предложениям</p>
+                <a class="footer-contacts-link"href="mailto:meat-burgerkrd@mail.ru">meat-burgerkrd@mail.ru</a>
+            </div>
+            <div class="footer-info-pay">
+                <p class="text-read">Мы принимаем</p>
+                <img src="{% static 'img/payment/maestro.svg' %}" alt="Maesto">
+                <img src="{% static 'img/payment/mastercard-classic.svg' %}" alt="MasterCard">
+                <img src="{% static 'img/payment/visa-classic.svg' %}" alt="visaclassic">
+            </div>
+            <div class="footer-social">
+                <a href=""><img class="footer-social-img-vk"src="{% static 'img/logo/vk.png' %}" alt="Вконтакте"><br></a>
+                <a href=""><img class="footer-social-img-instagram"src="{% static 'img/logo/instagram.png' %}" alt="Инстраграм"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
