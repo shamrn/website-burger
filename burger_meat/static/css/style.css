@@ -146,8 +146,8 @@ ul{
 
 .menu-burger{
     display: flex;
-    margin-left: 4vw;
-    margin-right: 4vw;
+    flex-wrap: wrap;
+    margin-left: 3vw;
 }
 
 .title{
@@ -158,34 +158,38 @@ ul{
 }
 
 .menu-title{
-    margin-left: 10vw;
+    width: 100%;
     margin-top: 9vw;
+    margin-left:5vw;
     font-size: 2.5vw;
     letter-spacing: 0.6vw;
 }
 
 
 .burger-img{
-    width: 17vw;
+    width: 18vw;
 }
 
 .menu-item{
+    width: 30%;
     display: flex;
     margin-top: 5vw;
+    margin-left:1vw;
     margin-right: 2vw;
 }
 
 .info-burger,.info-beverages{
-    margin-left: 1.5vw;
+    margin-left:2vw;
     margin-top: 3vw;
     font-size: 1vw;
+
 }
 
 .text-burger{
     padding-bottom: 2vw;
 }
 .name-burger,.name-baverages{
-    margin-left: -1vw;
+    margin-left:-1.5vw;
     font-size: 1.3vw;
 }
 
@@ -336,7 +340,7 @@ ul{
 }
 /* menu animations         */
 .text-burger-animat{
-    display: block; 
+    display: block;
     transition: font-size 600ms ease-in-out;
 }
 
@@ -478,7 +482,7 @@ ul{
     .nav-link{
         font-size: 3.4vw;
     }
-    .nav-link:hover{ 
+    .nav-link:hover{
         font-size: 4vw;
     }
     .svg-profile{
@@ -493,13 +497,12 @@ ul{
         bottom: 5%;
         left: 85%;
     }
-
-
     .menu-burger{
         display: block;
         margin: auto;
     }
     .menu-item{
+        width:100%;
         justify-content: center;
     }
     .burger-img{
@@ -528,11 +531,19 @@ ul{
     }
     .shares-info{
         display: block;
-    }   
+    }
     .ingredients-open{
         width: 78vw;
         height: 40vw;
         font-size: 1.8vw;
+    }
+    .close{
+        padding-left: 1.5vw;
+        font-size:5vw;
+    }
+    .ingredients-list{
+        padding-top: 2vw;
+        padding-left: 3vw;
     }
     .menu-bevarages{
         display: block;
@@ -544,5 +555,30 @@ ul{
         width: 20vw;
         border-radius:1.8vw;
     }
+    .text-burger-animat:hover{
+        font-size: 5vw;
+        border-color: #810000;
+    }
+    .buy-open{
+        width: 55vw;
+        height: 25vw;
+    }
+    .minus,.plus{
+        padding-right: 4vw;
+        font-size: 8vw;
+    }
+    .plus{
+        padding-left: 4vw;
+    }
+    .input_count{
+        width: 6vw;
+        height: 5vw;
+        font-size: 4vw;
+    }
+    .to-backet{
+        font-size: 3vw;
+    }
 }
+
+
 

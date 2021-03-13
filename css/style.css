@@ -146,8 +146,8 @@ ul{
 
 .menu-burger{
     display: flex;
-    margin-left: 4vw;
-    margin-right: 4vw;
+    flex-wrap: wrap;
+    margin-left: 3vw;
 }
 
 .title{
@@ -158,8 +158,9 @@ ul{
 }
 
 .menu-title{
-    margin-left: 10vw;
+    width: 100%;
     margin-top: 9vw;
+    margin-left:5vw;
     font-size: 2.5vw;
     letter-spacing: 0.6vw;
 }
@@ -170,6 +171,7 @@ ul{
 }
 
 .menu-item{
+    width: 30%;
     display: flex;
     margin-top: 5vw;
     margin-right: 2vw;

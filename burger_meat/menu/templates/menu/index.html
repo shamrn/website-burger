@@ -18,21 +18,26 @@
                 <h2 class="title" id="menu">
                     Меню
                 </h2>
-                <h3 class="menu-title">
-                    Бургеры
-                </h3>
                 <ul class="menu-burger">
+                   {% for item in menu %}
+                    {% ifchanged %}
+                    <h3 class="menu-title">
+                       {{ item.category }}
+                    </h3>
+                     {% endifchanged %}
                     <li class="menu-item">
-                        <img class="burger-img"src="img/burgers/burger-1.png" alt="">
+                        <img class="burger-img"src="{{item.photo.url}}" alt="">
                         <div class="info-burger">
-                            <p class="text-burger name-burger">Pampa burger</p>
-                            <p class="text-burger">270 грамм</p>
+                            <p class="text-burger name-burger">{{item.name}}</p>
+                            <p class="text-burger">{{item.volume}}</p>
+                            {% if item.show_ingridients %}
                             <p class="text-burger-ingredients text-burger-animat"><a href="#ingredients-blackout">Состав</a></p>
-                            <p class="text-burger-buy text-burger-animat"><a href="#open-buy">Заказать 210р</a></p>
+                            {% endif %}
+                            <p class="text-burger-buy text-burger-animat"><a href="#open-buy">Заказать {{item.price}}р</a></p>
                         </div>
                     </li>
+                    {% endfor %}
                 </ul>
-                <script src="js/index.js"></script>
             </div>
         </section>
     </main>
