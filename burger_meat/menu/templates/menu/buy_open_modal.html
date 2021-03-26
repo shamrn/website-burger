@@ -1,0 +1,15 @@
+
+<div class="buy-blackout" id="open-buy-{{ item.id }}">
+    <div class="buy-open">
+        <a href="#menu" class="close">&#10008;</a>
+        <h1>{{ product_id }}</h1>
+        <form class="win-buy" action="{% url 'cart:cart_add' item.id %}" method="post">
+            <div class="minus">-</div>
+            <input class="input_count" name="quantity" type="text" value="1">
+            <input type="hidden" name="update">
+            <div class="plus">+</div>
+            <input class="to-basket" type="submit" value="В корзину">
+            {% csrf_token %}
+        </form>
+    </div>
+</div>

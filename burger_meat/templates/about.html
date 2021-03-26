@@ -1,8 +1,10 @@
- {% extends 'base.html' %}
-  {% block menu %}
-    <main>
+
+{% extends 'base.html' %}
+  {% block content %}
+
         <section class="section-info">
-            <h2 class="title" id="about">
+            <div class="container">
+                <h2 class="title" id="about">
                 О нас
             </h2>
             <p class="text-about">Ищете место, где можно поесть вкусные бургеры, бургерная Meat идеально подходит для такого.</p>
@@ -11,6 +13,7 @@
             <p class="text-about">А ещё мы работаем как спорт-бар.</p>
             <p class="text-about">В нашем заведении умеренные цены.</p>
             <p class="text-about">У нас есть возможность подключиться к Wi-Fi, организован бизнес-ланч, осуществляется доставка блюд в офис или на дом, доступна парковка — специально для вашего удобства. Кроме того, здесь вы можете расслабиться с кальянной трубкой в руках.</p>
+            </div>
         </section>
-    </main>
+
  {% endblock %}

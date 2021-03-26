@@ -1,9 +1,14 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import *
+from django.views.generic import ListView
+from cart.forms import CartAddProductForm
 
-def index(request):
-    category = CategoryMenu.objects.all()
-    menu = Menu.objects.filter(published=True)
-    context = {'menu':menu,'category':category}
-    return render(request,'menu/index.html',context)
+class MenuListView(ListView):
+    queryset = Menu.objects.filter(published=True)
+    context_object_name = 'menu'
+    template_name = 'menu/menu.html'
+
+    def get_context_data(self,*,object_list=None,**kwargs):
+        context = super().get_context_data(**kwargs)
+        context['cart_product_form'] = CartAddProductForm()
+        return context

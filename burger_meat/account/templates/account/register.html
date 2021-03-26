@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Войти{% endblock %}
+{% block content %}
+    <section class="section-login">
+            <div class="container container-login">
+                <form action="." method="post">
+                    {% for item in user_form %}
+                    <p>{{ item }}<small class="errors-login">{{ item.errors }}</small></p>
+                    {% endfor %}
+                    {% csrf_token %}
+                    <p><input class="input-login input-login-submit" type="submit" value="Создать"></p>
+                </form>
+            </div>
+    </section>
+{% endblock %}

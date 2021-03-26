@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Войти{% endblock %}
+{% block content %}
+    <section class="section-login">
+            <div class="container container-login">
+                <div class="login">
+                    <h3>Вход</h3>
+                    {% if form.errors %}
+                    <p class="login-errors">Пароль или логин не верный,попробуйте еще раз</p>
+                    {% endif %}
+                     <form action="{% url 'login' %}" method="post">
+                        <input class='input-login'type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" required placeholder="Логин или почта"><br>
+                         <input class='input-login'type="password" name="password" autocomplete="current-password" required placeholder="Пароль">
+                        {% csrf_token %}
+                        <input class='input-login'type="hidden" name="next" value="{{ next }}">
+                        <p><input class='input-login input-login-submit' type="submit" value="Войти"></p>
+                    </form>
+                </div>
+                <div class="registration">
+
+                    <p class="logo-vk"><a class="login-vk reset-login"  href="{% url 'social:begin' 'vk-oauth2' %}">Войти через вконтакте</a></p>
+                    <p class="register-and-reset"><a class='reset-login' href="{% url 'register' %}">Регистрация</a></p>
+                    <p class="register-and-reset"><a class='reset-login' href="{% url 'password_reset' %}">Восстановить пароль</a></p>
+                </div>
+            </div>
+    </section>
+{% endblock %}

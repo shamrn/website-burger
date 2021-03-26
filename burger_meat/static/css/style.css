@@ -15,7 +15,10 @@
 }
 
 body{
-    background-color:black
+    background-color:black;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
 }
 
 html{
@@ -24,6 +27,8 @@ html{
     font-family: 'burger-font';
     letter-spacing: .3vw;
 }
+
+
 
 a{
     text-decoration: none;
@@ -49,7 +54,8 @@ ul{
 .header-container{
     display:flex;
     position: fixed;
-    z-index: 1; 
+    z-index: 1;
+    top:0;
     align-items: center;
     background-color:black;
     width: 100%;
@@ -73,7 +79,9 @@ ul{
     font-size: 1.5vw;
 }
 
-
+.nav-link-logout{
+    transform:translateY(.8vw);
+}
 .svg-profile{
     color: #810000;
     width:5vw;
@@ -99,13 +107,17 @@ ul{
 .basket{
     position: fixed;
     bottom: 5%;
-    left: 95%;
+    left: 92%;
 }
 .basket-link{
     font-size: .6vw;
 }
 .basket-img{
-    width: 4vw;
+    width: 5vw;
+}
+.basket-text{
+    font-size:.8vw;
+    line-height:1.5vw;
 }
 
 
@@ -228,7 +240,7 @@ ul{
     text-align: left;
     font-size: 1vw;
     font-weight: 900;
-    padding: 2vw 0vw 0vw 2vw;
+    padding: 2vw 0vw 0vw 3vw;
     border: .1vw solid;
     border-radius: 5vw;
     color: black;
@@ -316,27 +328,58 @@ ul{
 }
 .win-buy{
     display: flex;
-    padding-top: 1.5vw;
+    padding-top: 1vw;
     justify-content: center;
     align-items: center;
 }
 .minus,.plus{
     cursor: pointer;
     padding-right: 1.3vw;
-    font-size: 2vw;
+    font-size: 2.2vw;
 }
 .plus{
     padding-left: 1.3vw;
 }
 .input_count{
-    width: 3vw;
+    width: 3.6vw;
     opacity: 0.6;
     border-radius: 0.7vw;
     text-align: center;
 }
-.to-backet{
+.container-cart{
+    margin-top:16vw;
+}
+.table-cart{
+    margin-bottom:15vw;
+}
+.to-basket{
     color: black;
-    font-size: 1.3vw;
+    background:none;
+    text-align:center;
+    border:none;
+    padding: 1vw 1vw 1vw 1vw;
+    font-size: 1.2vw;
+}
+
+.item-cart{
+    padding-left:5vw;
+    padding-top:3vw;
+}
+.to-basket-edit{
+    color:whitesmoke;
+}
+.win-buy-cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart-edit{
+    padding:0;
+    margin:0;
+}
+.cart-text-right{
+    text-align:right;
+    margin-right:2vw;
 }
 /* menu animations         */
 .text-burger-animat{
@@ -349,8 +392,12 @@ ul{
     font-size: 1.3vw;
     border-color: #810000;
 }
-
-
+.minus:hover,.plus:hover,.close:hover{
+    color:#810000;
+}
+.to-basket:hover{
+    color:#810000;
+}
 
 /*    menu shares  */
 
@@ -369,7 +416,7 @@ ul{
 
 .shares-text{
     flex: 1 1 50%;
-    margin-left: 5vw;
+    margin-left: 1vw;
     padding: 3.5vw;
     font-size: 4vw;
     border:.8vw solid;
@@ -402,6 +449,10 @@ ul{
 
 /*       section footer     */
 
+
+.footer{
+        margin-top:auto;
+}
 .container-footer{
     display: flex;
     margin-left: auto;
@@ -461,6 +512,96 @@ ul{
     width: 2.6vw;
     margin-top: 1.5vw;
     transform: translateX(.4vw);
+}
+
+/*  section profle */
+
+.section-login{
+    margin-top:20vw;
+}
+
+.container-login{
+    display:flex;
+    justify-content: center;
+}
+
+.login,.registration{
+    margin-left:auto;
+    margin-right:auto;
+    font-size:1.8vw;
+}
+
+.login-errors{
+    width:40vw;
+    font-size:1.4vw;
+    color:#810000;
+}
+
+
+.input-login{
+    margin-top:1.5vw;
+    background-color: rgba(102, 102, 102, 0.3);
+    text-color:whitesmoke;
+    width:22vw;
+    height:3vw;
+    text-align:center;
+    font-size:1.4vw;
+    border-radius:.5vw;
+    border:none;
+    letter-spacing:0.2vw;
+
+}
+.svg-login{
+     transform: translateY(1vw);
+     width:3vw;
+     height:3vw;
+}
+.input-login-submit:hover{
+    color:#810000;
+}
+
+.input-login-submit{
+    margin-bottom:3vw;
+}
+
+.registration{
+    margin-top:4vw;
+}
+.register-and-reset{
+    margin-top:5vw;
+}
+
+.reset-login{
+    font-size:1.4vw;
+    padding:1vw 1.4vw 1vw 1.4vw;
+    border-radius:.5vw;
+    background-color: rgba(102, 102, 102, 0.3);
+    color:black;
+    letter-spacing:0.2vw;
+}
+.reset-login:hover{
+    color:#810000;
+}
+.login-reset-form{
+    text-align:center;
+}
+.reset-done{
+    text-align:center;
+}
+.errors-login{
+     color:#810000;
+}
+.logo-vk{
+     background-image:url(../img/logo/vk.png);
+     background-repeat:no-repeat;
+     background-size:3.1vw;
+}
+.login-vk{
+    font-size:1.4vw;
+    padding:1vw 1.4vw 1vw 4.4vw;
+    border-radius:.5vw;
+    background-color: rgba(102, 102, 102, 0.3);
+    color:rgb(75, 112, 150);
 }
 
 
@@ -577,6 +718,13 @@ ul{
     }
     .to-backet{
         font-size: 3vw;
+    }
+    .section-info{
+        margin-top:35vw;
+    }
+    .text-about{
+        font-size:3.4vw;
+        margin-top:8vw;
     }
 }
 

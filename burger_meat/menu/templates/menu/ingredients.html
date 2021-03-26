@@ -1,0 +1,12 @@
+{% if item.show_ingridients %}
+<div class="ingredients-blackout" id="ingridient-{{ item.pk }}">
+    <div class="ingredients-open">
+        <a href="#menu" class="close">&#10008;</a>
+        <ul class="ingredients-list">
+            {% for list in item.ingredient.all %}
+            <li class="ingredients-text">{{ list.ingredient }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endif %}
