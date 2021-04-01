@@ -6,5 +6,6 @@ class MenuAdmin(admin.ModelAdmin):
     list_display = ('category','name','price',)
     list_filter = ('category','published')
 
+
 admin.site.register(CategoryMenu)
 admin.site.register(Ingridients)

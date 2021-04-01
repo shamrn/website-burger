@@ -8,7 +8,7 @@ class UserRegistrationForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['username'].widget.attrs.update({'class': 'input-login','placeholder':'Имя пользователя'})
+        self.fields['username'].widget.attrs.update({'class': 'input-login','placeholder':'Логин'})
         self.fields['email'].widget.attrs.update({'class': 'input-login', 'placeholder': 'E-mail'})
 
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class':'input-login','placeholder':'Пароль'}))
@@ -34,6 +34,8 @@ class UserRegistrationForm(forms.ModelForm):
         if cd['password'] != cd['password2']:
             raise forms.ValidationError('Пароль не совпадает')
         return cd['password2']
+
+
 
 class DivErrorList(ErrorList):
     def __str__(self):

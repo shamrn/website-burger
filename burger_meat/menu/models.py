@@ -16,7 +16,7 @@ class Menu(models.Model):
     volume = models.CharField(max_length=50,blank=True,verbose_name='Объём продукта')
     price = models.IntegerField(blank=True,verbose_name='Цена')
     show_ingridients = models.BooleanField(default=False,verbose_name='Добавить состав')
-    ingredient = models.ManyToManyField('Ingridients',verbose_name='Ингредиент')
+    ingredient = models.ManyToManyField('Ingridients',blank=True,verbose_name='Ингредиент')
     published = models.BooleanField(default=True, verbose_name='Опубликовано')
     photo = models.ImageField(upload_to=f'photos/',verbose_name='Изображение')
 
@@ -24,6 +24,10 @@ class Menu(models.Model):
         verbose_name = 'Меню'
         verbose_name_plural = 'Меню'
         ordering = ('category',)
+
+    def __str__(self):
+        return self.name
+
 
 class Ingridients(models.Model):
     ingredient = models.CharField(max_length=50,verbose_name='Ингредиент')

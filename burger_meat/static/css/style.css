@@ -106,7 +106,7 @@ ul{
 
 .basket{
     position: fixed;
-    bottom: 5%;
+    bottom: 7%;
     left: 92%;
 }
 .basket-link{
@@ -118,6 +118,7 @@ ul{
 .basket-text{
     font-size:.8vw;
     line-height:1.5vw;
+    white-space:nowrap;
 }
 
 
@@ -440,9 +441,7 @@ ul{
     letter-spacing: .3vw;
     font-size: 2.2vw;
 }
-.container-about{
-    top: 0%;
-}
+
 .text-about::first-letter{
     font-size: 2.4vw;
 }
@@ -516,7 +515,7 @@ ul{
 
 /*  section profle */
 
-.section-login{
+.section-login,.section-order{
     margin-top:20vw;
 }
 
@@ -541,7 +540,6 @@ ul{
 .input-login{
     margin-top:1.5vw;
     background-color: rgba(102, 102, 102, 0.3);
-    text-color:whitesmoke;
     width:22vw;
     height:3vw;
     text-align:center;
@@ -549,7 +547,6 @@ ul{
     border-radius:.5vw;
     border:none;
     letter-spacing:0.2vw;
-
 }
 .svg-login{
      transform: translateY(1vw);
@@ -558,6 +555,9 @@ ul{
 }
 .input-login-submit:hover{
     color:#810000;
+}
+.input-login:focus{
+        color: #810000;
 }
 
 .input-login-submit{
@@ -604,10 +604,65 @@ ul{
     color:rgb(75, 112, 150);
 }
 
+.title-profile{
+    text-align:center;
+}
 
+.info-profile{
+
+}
+
+/*    section-order     */
+
+.container-order{
+    display:flex;
+}
+
+.info-order{
+    margin-left:5vw;
+    width:30vw;
+    height:35vw;
+    background: rgba(192, 182, 182,0.8);
+    border-radius:3vw;
+    color:black;
+}
+
+.order-title{
+    padding-top:2vw;
+    text-align:center;
+}
+.order-text{
+    padding-top:2vw;
+    padding-left:1.5vw;
+}
+.order-form{
+    margin-left:5vw;
+}
+.order-total-price{
+    padding-top:5vw;
+    padding-left:2vw;
+}
+.order-info{
+    max-width:50vw;
+    line-height:2.3vw;
+    word-spacing:0.4vw;
+}
+.complete-info{
+    font-size:2vw;
+    margin-left:4vw;
+    word-spacing:0.2vw;
+    line-height:3.5vw;
+}
 /*       menu adaptiv mobile */
 
 @media screen and (max-width: 768px) {
+
+    html,body{
+        width:100%;
+        max-width:100%;
+        overflow:auto;
+    }
+
     .logo-img{
         width: 25vw;
     }
@@ -648,6 +703,7 @@ ul{
     }
     .burger-img{
         width: 45vw;
+        height:57vw;
     }
     .title{
         font-size: 7vw;
@@ -674,9 +730,9 @@ ul{
         display: block;
     }
     .ingredients-open{
-        width: 78vw;
-        height: 40vw;
-        font-size: 1.8vw;
+        width: 90vw;
+        height: 50vw;
+        font-size: 2.4vw;
     }
     .close{
         padding-left: 1.5vw;
@@ -716,16 +772,59 @@ ul{
         height: 5vw;
         font-size: 4vw;
     }
-    .to-backet{
+    .basket{
+        left:80%;
+    }
+    .to-basket{
         font-size: 3vw;
     }
-    .section-info{
+    .basket-text{
+        font-size:2.5vw;
+        line-height:6vw;
+        margin-right:5vw;
+    }
+    .section-info,.section-login,.section-cart,.section-order{
         margin-top:35vw;
     }
     .text-about{
-        font-size:3.4vw;
+        font-size:4vw;
         margin-top:8vw;
+        line-height:6.7vw;
     }
+    .title-login{
+        font-size:
+            7vw;
+    }
+    .input-login,.reset-login{
+        margin-top:3.2vw;
+        width:50vw;
+        height:12vw;
+        text-align:center;
+        font-size:3.5vw;
+        border-radius:.8vw;
+        border:none;
+        letter-spacing:0.3vw;
+    }
+
+    .container-login{
+        display:block;
+        text-align:center;
+    }
+    .registration{
+        margin-top:10vw;
+    }
+
+    .reset-login{
+        padding:2.2vw 3.5vw 2.2vw 3.5vw;
+    }
+    .register-and-reset{
+        margin-top:10vw;
+    }
+    .logo-vk{
+        background-image:none;
+
+    }
+
 }
 
 

@@ -26,6 +26,7 @@ urlpatterns = [
     path('account/',include('account.urls')),
     path('', include('social_django.urls')),
     path('cart/',include('cart.urls')),
+    path('order/',include('orders.urls'))
 
 ]
 if settings.DEBUG:

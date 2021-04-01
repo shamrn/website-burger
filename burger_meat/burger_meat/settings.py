@@ -26,7 +26,7 @@ SECRET_KEY = 'n=-=0@xm+g=a&t$(z2fpdvk+%tr&!p3-j_biu$r(r!h+or(5bb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1','192.168.0.11']
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'shares.apps.SharesConfig',
     'social_django',
     'cart.apps.CartConfig',
+    'orders.apps.OrdersConfig',
 
 ]
 

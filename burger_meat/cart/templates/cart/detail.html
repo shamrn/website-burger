@@ -33,7 +33,7 @@
                 <p class="cart-text-right">
                     <a class="reset-login" href="{% url 'menu' %}#menu" class="button light">Вернуться в меню</a>
                     {% if cart|length > 0 %}
-                    <a class="reset-login" href="#" class="button">Оформить</a>
+                    <a class="reset-login" href="{% url 'orders:order' %}" class="button">Оформить</a>
                     {% endif %}
                 </p>
              <script src="{% static 'js/buy_modal.js' %}"></script>
