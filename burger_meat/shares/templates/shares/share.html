@@ -1,0 +1,14 @@
+{% load share_tags %}
+<section class="section-shares">
+    <div class="container container-shares">
+        <h2 class="title" id="shares">
+            Акции
+        </h2>
+        <div class="shares-info">
+            {% show_shares as shares %}
+            {% for share in shares %}
+            <p class="shares-text shares-text-too">{{ share.body }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>

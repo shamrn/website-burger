@@ -1,0 +1,831 @@
+
+/* https://farshburger.ru/promo/podarochnye-karty-FARsh */
+
+/*  https://kraftburger.com.ua/ru/kyiv  */
+
+@font-face {
+	font-family: 'burger-font';
+	src: url("../fonts/kb_danube.woff2") format('woff2'),
+		url("../fonts/kb_danube.woff") format('woff');
+	font-style:normal;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color:black;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+}
+
+html{
+    scroll-behavior: smooth;
+    color:whitesmoke;
+    font-family: 'burger-font';
+    letter-spacing: .3vw;
+}
+
+
+
+a{
+    text-decoration: none;
+    color: whitesmoke;
+    font-family: 'burger-font'
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none; 
+}
+
+
+/* section header */
+
+.logo-img{
+    margin-left: 3vw;
+    width:  15vw;
+}
+
+
+.header-container{
+    display:flex;
+    position: fixed;
+    z-index: 1;
+    top:0;
+    align-items: center;
+    background-color:black;
+    width: 100%;
+}
+
+
+.nav-list{
+    display:flex;
+    margin-left: 3vw;
+    white-space: nowrap;
+    font-size: 1.5vw;
+}
+
+.nav-item{
+    margin-right: 3vw;
+}
+
+.profile{
+    display: flex;
+    transform: translateY(-0.5vw);
+    font-size: 1.5vw;
+}
+
+.nav-link-logout{
+    transform:translateY(.8vw);
+}
+.svg-profile{
+    color: #810000;
+    width:5vw;
+    height:3vw;
+}
+
+/*    header animations  */
+.nav-link{
+    display: block;  /*  дисплей блок для нижней анимации (изменение цвета первой буквы) */
+    transition: font-size 600ms ease-in-out;
+}
+
+.nav-link:hover::first-letter{
+    color:#810000;
+}
+.nav-link:hover{ 
+    font-size: 2vw;
+}
+
+
+/*   header basket   */
+
+.basket{
+    position: fixed;
+    bottom: 7%;
+    left: 92%;
+}
+.basket-link{
+    font-size: .6vw;
+}
+.basket-img{
+    width: 5vw;
+}
+.basket-text{
+    font-size:.8vw;
+    line-height:1.5vw;
+    white-space:nowrap;
+}
+
+
+/*      section banner    */
+
+.container-banner{
+    position:relative;
+}
+.img-banner{
+    width: 99vw;
+}
+
+.banner-title,.banner-subtitle{
+    position: absolute;
+
+}
+
+.banner-title{
+    top: 40%;
+    right: 35%;
+    font-size: 9vw;
+    background: linear-gradient(0deg,black 24%,whitesmoke 20%);
+    background-clip: text;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;  
+    letter-spacing: .4vw;
+}
+.banner-subtitle{
+    top: 70%;
+    right:10%;
+    font-size: 3.5vw;
+    letter-spacing: .7vw;
+}
+
+/*  section menu  */
+
+
+
+.menu-burger{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 3vw;
+}
+
+.title{
+    margin-top: 5vw;
+    text-align: center;
+    font-size:4vw;
+    letter-spacing: 0.9vw;
+}
+
+.menu-title{
+    width: 100%;
+    margin-top: 9vw;
+    margin-left:5vw;
+    font-size: 2.5vw;
+    letter-spacing: 0.6vw;
+}
+
+
+.burger-img{
+    width: 18vw;
+}
+
+.menu-item{
+    width: 30%;
+    display: flex;
+    margin-top: 5vw;
+    margin-left:1vw;
+    margin-right: 2vw;
+}
+
+.info-burger,.info-beverages{
+    margin-left:2vw;
+    margin-top: 3vw;
+    font-size: 1vw;
+
+}
+
+.text-burger{
+    padding-bottom: 2vw;
+}
+.name-burger,.name-baverages{
+    margin-left:-1.5vw;
+    font-size: 1.3vw;
+}
+
+.text-burger-ingredients{
+    padding: .9vw 0vw .9vw 0vw;
+    width: 7.5vw;
+    border-top: .1vw solid whitesmoke;
+    border-bottom: .1vw solid whitesmoke;
+    border-radius: .6vw;
+    text-align: center;
+}
+.text-burger-buy{
+    margin-top: 2vw;
+    padding: 1.2vw 0vw 1.2vw 0vw;
+    width: 9vw;
+    border-top: .1vw solid whitesmoke;
+    border-bottom: .1vw solid whitesmoke;
+    border-radius: .6vw;
+    text-align: center;
+}
+
+/*     section open ingridients    */
+.ingredients-blackout{
+    background: rgba(102, 102, 102, 0.3);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 1;
+  }
+.ingredients-open{
+    width: 40vw;
+    height: 25vw;
+    text-align: left;
+    font-size: 1vw;
+    font-weight: 900;
+    padding: 2vw 0vw 0vw 3vw;
+    border: .1vw solid;
+    border-radius: 5vw;
+    color: black;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background: rgba(192, 182, 182,0.8);
+}
+.ingredients-text{
+    padding-top: 1vw;
+}
+.ingredients-list{
+    list-style:disc;
+}
+.ingredients-blackout:target {display: block;}
+.close {
+    color:black;
+    margin-left: 1vw;
+    font-size: 2vw;
+    cursor: pointer;
+}
+
+/*    section bevarages   */
+.menu-bevarages{
+    display: flex;
+}
+
+.beverages-img{
+    margin-left: -6vw;
+    width: 35vw;
+}
+.info-beverages{
+    margin-left: -10vw;
+}
+.text-beverages-buy{
+    margin-top: 4vw;
+    padding: 1.5vw 0vw 1.5vw 0vw;
+    width: 10vw;
+    border-top: .1vw solid whitesmoke;
+    border-bottom: .1vw solid whitesmoke;
+    border-radius: .6vw;
+    text-align: center;
+}
+
+/*    open buy   */
+
+.buy-blackout{
+    background: rgba(102, 102, 102, 0.3);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 1;
+  }
+.buy-open{
+    width: 25vw;
+    height: 12vw;
+    text-align: left;
+    font-size: 1vw;
+    font-weight: 900;
+    padding: 1.3vw 0vw 0vw 2vw;
+    border: .1vw solid;
+    border-radius: 3vw;
+    color: black;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background: rgba(192, 182, 182,0.8);
+}
+
+.buy-blackout:target {display: block;}
+.close {
+    color:black;
+    margin-left: 0.2vw;
+    font-size: 2vw;
+    cursor: pointer;
+}
+.win-buy{
+    display: flex;
+    padding-top: 1vw;
+    justify-content: center;
+    align-items: center;
+}
+.minus,.plus{
+    cursor: pointer;
+    padding-right: 1.3vw;
+    font-size: 2.2vw;
+}
+.plus{
+    padding-left: 1.3vw;
+}
+.input_count{
+    width: 3.6vw;
+    opacity: 0.6;
+    border-radius: 0.7vw;
+    text-align: center;
+}
+.container-cart{
+    margin-top:16vw;
+}
+.table-cart{
+    margin-bottom:15vw;
+}
+.to-basket{
+    color: black;
+    background:none;
+    text-align:center;
+    border:none;
+    padding: 1vw 1vw 1vw 1vw;
+    font-size: 1.2vw;
+}
+
+.item-cart{
+    padding-left:5vw;
+    padding-top:3vw;
+}
+.to-basket-edit{
+    color:whitesmoke;
+}
+.win-buy-cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart-edit{
+    padding:0;
+    margin:0;
+}
+.cart-text-right{
+    text-align:right;
+    margin-right:2vw;
+}
+/* menu animations         */
+.text-burger-animat{
+    display: block;
+    transition: font-size 600ms ease-in-out;
+}
+
+
+.text-burger-animat:hover{
+    font-size: 1.3vw;
+    border-color: #810000;
+}
+.minus:hover,.plus:hover,.close:hover{
+    color:#810000;
+}
+.to-basket:hover{
+    color:#810000;
+}
+
+/*    menu shares  */
+
+.container-shares{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vw;
+    max-width: 90vw;
+}
+
+.shares-info{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.shares-text{
+    flex: 1 1 50%;
+    margin-left: 1vw;
+    padding: 3.5vw;
+    font-size: 4vw;
+    border:.8vw solid;
+    letter-spacing: .5vw;
+    border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3Epath%7Banimation:stroke 5s infinite linear%3B%7D%40keyframes stroke%7Bto%7Bstroke-dashoffset:776%3B%7D%7D%3C/style%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232d3561' /%3E%3Cstop offset='25%25' stop-color='%23c05c7e' /%3E%3Cstop offset='50%25' stop-color='%23f3826f' /%3E%3Cstop offset='100%25' stop-color='%23ffb961' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3' stroke-dasharray='388'/%3E %3C/svg%3E") 1;
+}
+
+
+
+/*    section about us       */
+
+.section-info{
+    margin-top: 20vw;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80vw;
+    text-align: center;
+    line-height: 3.4vw;
+}
+.text-about{
+    letter-spacing: .3vw;
+    font-size: 2.2vw;
+}
+
+.text-about::first-letter{
+    font-size: 2.4vw;
+}
+
+/*       section footer     */
+
+
+.footer{
+        margin-top:auto;
+}
+.container-footer{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    margin-top: 10vw;
+    height: 12vw;
+    font-size: 0.8vw;
+    letter-spacing: .2vw;
+    background-color:#171A18;
+}
+
+.footer-about{
+    margin-left: 1vw;
+    margin-top: 3vw;
+}
+
+.text-read{
+    opacity: 0.5;
+}
+
+.footer-about-link strong{
+    color: #810000;
+}
+.footer-contacts{
+    margin-left: 3vw;
+    margin-top: 2vw;
+}
+
+.footer-about-link{
+    margin-top: 3vw;
+}
+.footer-about-link-contacts{
+    margin-top: 2vw;
+}
+.footer-contacts-link{
+    color: #810000;
+}
+.footer-info-pay{
+    margin-left: 3vw;
+    margin-top: 3vw;
+}
+.footer-info-pay img{
+    width: 5vw;
+}
+
+.footer-social{
+    margin-top: 2.5vw;
+    margin-left: 5vw;
+}
+
+.footer-social-img-vk{
+    width: 3vw;
+}
+
+.footer-social-img-instagram{
+    width: 2.6vw;
+    margin-top: 1.5vw;
+    transform: translateX(.4vw);
+}
+
+/*  section profle */
+
+.section-login,.section-order{
+    margin-top:20vw;
+}
+
+.container-login{
+    display:flex;
+    justify-content: center;
+}
+
+.login,.registration{
+    margin-left:auto;
+    margin-right:auto;
+    font-size:1.8vw;
+}
+
+.login-errors{
+    width:40vw;
+    font-size:1.4vw;
+    color:#810000;
+}
+
+
+.input-login{
+    margin-top:1.5vw;
+    background-color: rgba(102, 102, 102, 0.3);
+    width:22vw;
+    height:3vw;
+    text-align:center;
+    font-size:1.4vw;
+    border-radius:.5vw;
+    border:none;
+    letter-spacing:0.2vw;
+}
+.svg-login{
+     transform: translateY(1vw);
+     width:3vw;
+     height:3vw;
+}
+.input-login-submit:hover{
+    color:#810000;
+}
+.input-login:focus{
+        color: #810000;
+}
+
+.input-login-submit{
+    margin-bottom:3vw;
+}
+
+.registration{
+    margin-top:4vw;
+}
+.register-and-reset{
+    margin-top:5vw;
+}
+
+.reset-login{
+    font-size:1.4vw;
+    padding:1vw 1.4vw 1vw 1.4vw;
+    border-radius:.5vw;
+    background-color: rgba(102, 102, 102, 0.3);
+    color:black;
+    letter-spacing:0.2vw;
+}
+.reset-login:hover{
+    color:#810000;
+}
+.login-reset-form{
+    text-align:center;
+}
+.reset-done{
+    text-align:center;
+}
+.errors-login{
+     color:#810000;
+}
+.logo-vk{
+     background-image:url(../img/logo/vk.png);
+     background-repeat:no-repeat;
+     background-size:3.1vw;
+}
+.login-vk{
+    font-size:1.4vw;
+    padding:1vw 1.4vw 1vw 4.4vw;
+    border-radius:.5vw;
+    background-color: rgba(102, 102, 102, 0.3);
+    color:rgb(75, 112, 150);
+}
+
+.title-profile{
+    text-align:center;
+}
+
+.info-profile{
+
+}
+
+/*    section-order     */
+
+.container-order{
+    display:flex;
+}
+
+.info-order{
+    margin-left:5vw;
+    width:30vw;
+    height:35vw;
+    background: rgba(192, 182, 182,0.8);
+    border-radius:3vw;
+    color:black;
+}
+
+.order-title{
+    padding-top:2vw;
+    text-align:center;
+}
+.order-text{
+    padding-top:2vw;
+    padding-left:1.5vw;
+}
+.order-form{
+    margin-left:5vw;
+}
+.order-total-price{
+    padding-top:5vw;
+    padding-left:2vw;
+}
+.order-info{
+    max-width:50vw;
+    line-height:2.3vw;
+    word-spacing:0.4vw;
+}
+.complete-info{
+    font-size:2vw;
+    margin-left:4vw;
+    word-spacing:0.2vw;
+    line-height:3.5vw;
+}
+/*       menu adaptiv mobile */
+
+@media screen and (max-width: 768px) {
+
+    html,body{
+        width:100%;
+        max-width:100%;
+        overflow:auto;
+    }
+
+    .logo-img{
+        width: 25vw;
+    }
+    .nav{
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 20px;
+        margin-bottom: -20px;
+    }
+    .nav-list{
+        transform: translateY(1.5vw);
+    }
+    .nav-link{
+        font-size: 3.4vw;
+    }
+    .nav-link:hover{
+        font-size: 4vw;
+    }
+    .svg-profile{
+        width: 6vw;
+        height: 6vw;
+        margin-right: 1vw;
+    }
+    .basket-img{
+        width: 15vw;
+    }
+    .basket{
+        bottom: 5%;
+        left: 85%;
+    }
+    .menu-burger{
+        display: block;
+        margin: auto;
+    }
+    .menu-item{
+        width:100%;
+        justify-content: center;
+    }
+    .burger-img{
+        width: 45vw;
+        height:57vw;
+    }
+    .title{
+        font-size: 7vw;
+        letter-spacing: 1.4vw;
+    }
+    .menu-title{
+        font-size: 5vw;
+    }
+    .name-burger,.name-baverages{
+        font-size: 3.2vw;
+    }
+    .info-burger,.info-beverages{
+        font-size: 3vw;
+    }
+    .text-burger-ingredients{
+        width: 16vw;
+        border-radius: 1.2vw;
+    }
+    .text-burger-buy{
+        width: 20vw;
+        border-radius: 1.3vw;
+    }
+    .shares-info{
+        display: block;
+    }
+    .ingredients-open{
+        width: 90vw;
+        height: 50vw;
+        font-size: 2.4vw;
+    }
+    .close{
+        padding-left: 1.5vw;
+        font-size:5vw;
+    }
+    .ingredients-list{
+        padding-top: 2vw;
+        padding-left: 3vw;
+    }
+    .menu-bevarages{
+        display: block;
+    }
+    .beverages-img{
+        width: 60vw;
+    }
+    .text-beverages-buy{
+        width: 20vw;
+        border-radius:1.8vw;
+    }
+    .text-burger-animat:hover{
+        font-size: 5vw;
+        border-color: #810000;
+    }
+    .buy-open{
+        width: 55vw;
+        height: 25vw;
+    }
+    .minus,.plus{
+        padding-right: 4vw;
+        font-size: 8vw;
+    }
+    .plus{
+        padding-left: 4vw;
+    }
+    .input_count{
+        width: 6vw;
+        height: 5vw;
+        font-size: 4vw;
+    }
+    .basket{
+        left:80%;
+    }
+    .to-basket{
+        font-size: 3vw;
+    }
+    .basket-text{
+        font-size:2.5vw;
+        line-height:6vw;
+        margin-right:5vw;
+    }
+    .section-info,.section-login,.section-cart,.section-order{
+        margin-top:35vw;
+    }
+    .text-about{
+        font-size:4vw;
+        margin-top:8vw;
+        line-height:6.7vw;
+    }
+    .title-login{
+        font-size:
+            7vw;
+    }
+    .input-login,.reset-login{
+        margin-top:3.2vw;
+        width:50vw;
+        height:12vw;
+        text-align:center;
+        font-size:3.5vw;
+        border-radius:.8vw;
+        border:none;
+        letter-spacing:0.3vw;
+    }
+
+    .container-login{
+        display:block;
+        text-align:center;
+    }
+    .registration{
+        margin-top:10vw;
+    }
+
+    .reset-login{
+        padding:2.2vw 3.5vw 2.2vw 3.5vw;
+    }
+    .register-and-reset{
+        margin-top:10vw;
+    }
+    .logo-vk{
+        background-image:none;
+
+    }
+
+}
+
+
+

@@ -1,0 +1,42 @@
+ {% extends 'base.html' %}
+ {% load static %}
+ {% block content %}
+     <section class="section-cart">
+            <div class="container container-cart">
+                <h2 class="title cart-title">Корзина</h2>
+                <table class="cart">
+                    <tbody>
+                        {% for item in cart %}
+                            <tr>
+                                <td class="item-cart"><img class="burger-img"src="{{ item.product.photo.url }}" alt=""></td>
+                                <td class="item-cart"><h3>{{ item.product.name }}</h3></td>
+                                <td class="item-cart">
+                                    <form class="win-buy-cart" action="{% url 'cart:cart_add' item.product.id %}" method="post">
+                                        <div class="minus">-</div>
+                                        <input class="input_count" name="quantity" type="text" value="{{ item.quantity }}">
+                                        <input type="hidden" name="update" value="True">
+                                        <div class="plus">+</div>
+                                        <input class="to-basket to-basket-edit cart-edit" type="submit" value="Изменить">
+                                        {% csrf_token %}
+                                    </form>
+                                </td>
+                                <td class="item-cart">{{ item.total_price }} руб.</td>
+                                <td class="item-cart ">
+                                    <a class="to-basket to-basket-edit cart-edit" href="{% url 'cart:cart_remove' item.product.id %}">
+                                        Удалить
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <p class="cart-text-right">
+                    <a class="reset-login" href="{% url 'menu' %}#menu" class="button light">Вернуться в меню</a>
+                    {% if cart|length > 0 %}
+                    <a class="reset-login" href="{% url 'orders:order' %}" class="button">Оформить</a>
+                    {% endif %}
+                </p>
+             <script src="{% static 'js/buy_modal.js' %}"></script>
+            </div>
+     </section>
+ {% endblock %}

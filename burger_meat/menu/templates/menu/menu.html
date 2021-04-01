@@ -1,0 +1,47 @@
+ {% extends 'base.html' %}
+ {% load static %}
+ {% block content %}
+
+        <section class="section-banner">
+            <div class="container container-banner">
+                <img class="img-banner"src="{% static '/img/burgers.jpg' %}" alt="">
+                <h1 class='banner-title'>
+                    M E A T
+                </h1>
+                <h2 class="banner-subtitle">
+                    БУРГЕРНАЯ В КРАСНОДАРЕ
+                </h2>
+        </div>
+        </section>
+        <section class="section-menu">
+            <div class="container container-menu">
+                <h2 class="title" id="menu">
+                    Меню
+                </h2>
+                <ul class="menu-burger">
+                   {% for item in menu %}
+                    {% ifchanged %}
+                    <h3 class="menu-title">
+                       {{ item.category }}
+                    </h3>
+                     {% endifchanged %}
+                    <li class="menu-item">
+                        <img class="burger-img"src="{{ item.photo.url }}" alt="">
+                        <div class="info-burger">
+                            <p class="text-burger name-burger">{{ item.name }}</p>
+                            <p class="text-burger">{{ item.volume }}</p>
+                            {% if item.show_ingridients %}
+                            <p class="text-burger-ingredients text-burger-animat"><a href="#ingridient-{{ item.pk }}">Состав</a></p>
+                            {% endif %}
+                            <p class="text-burger-buy text-burger-animat"><a href="#open-buy-{{ item.id }}">Заказать {{ item.price }}р</a></p>
+                        </div>
+                    </li>
+                    {% include "./ingredients.html" %}
+                    {% include "./buy_open_modal.html" %}
+                    {% endfor %}
+                    <script src="{% static 'js/buy_modal.js' %}"></script>
+                </ul>
+            </div>
+        </section>
+           {% include 'shares/share.html' %}
+ {% endblock %}

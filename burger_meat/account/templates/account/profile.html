@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="section-login">
+    <h1 class="title-profile">Личный кабинет</h1>
+    <div class="container container-profile">
+        <div class="info-profile">
+            <a class="nav-link nav-link-logout" href="{% url 'logout' %}?next={% url 'menu' %}">Выйти</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
