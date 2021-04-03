@@ -8,14 +8,14 @@ class UserRegistrationForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['username'].widget.attrs.update({'class': 'input-login','placeholder':'Логин'})
-        self.fields['email'].widget.attrs.update({'class': 'input-login', 'placeholder': 'E-mail'})
+        self.fields['username'].widget.attrs.update({'placeholder':'Логин'})
+        self.fields['email'].widget.attrs.update({'placeholder': 'E-mail'})
 
-    password = forms.CharField(widget=forms.PasswordInput(attrs={'class':'input-login','placeholder':'Пароль'}))
-    password2 = forms.CharField(widget=forms.PasswordInput(attrs={'class':'input-login','placeholder':'Пароль еще раз'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder':'Пароль'}))
+    password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder':'Пароль еще раз'}))
     phone = forms.CharField(min_length=5,max_length=35)
 
-    phone.widget.attrs.update({'class':'input-login','placeholder':'Номер'})
+    phone.widget.attrs.update({'placeholder':'Номер'})
 
     class Meta:
         model = User
@@ -34,7 +34,6 @@ class UserRegistrationForm(forms.ModelForm):
         if cd['password'] != cd['password2']:
             raise forms.ValidationError('Пароль не совпадает')
         return cd['password2']
-
 
 
 class DivErrorList(ErrorList):

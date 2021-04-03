@@ -1,3 +1,7 @@
 from django.test import TestCase
+from .models import Menu,CategoryMenu
+from django.core.files.uploadedfile import SimpleUploadedFile
 
-# Create your tests here.
+
+class MenuTestCases(TestCase):
+    pass
