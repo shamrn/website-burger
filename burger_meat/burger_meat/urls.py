@@ -17,17 +17,20 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path,include
-from .views import about
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('menu.urls')),
-    path('about/',about,name='about'),
     path('account/',include('account.urls')),
     path('', include('social_django.urls')),
     path('cart/',include('cart.urls')),
-    path('order/',include('orders.urls'))
+    path('order/',include('orders.urls')),
+    # path('', include('django.contrib.flatpages.urls')),#!
 
 ]
 if settings.DEBUG:
+    import debug_toolbar
+
+    urlpatterns += (path("__debug__/", include(debug_toolbar.urls)),)
     urlpatterns += static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)

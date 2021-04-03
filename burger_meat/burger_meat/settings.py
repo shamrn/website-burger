@@ -26,7 +26,7 @@ SECRET_KEY = 'n=-=0@xm+g=a&t$(z2fpdvk+%tr&!p3-j_biu$r(r!h+or(5bb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1','192.168.0.11']
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1','192.168.0.11','*']
 
 
 # Application definition
@@ -44,6 +44,9 @@ INSTALLED_APPS = [
     'social_django',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
+    'debug_toolbar',  #!
 
 ]
 
@@ -55,6 +58,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware', #!
+    "debug_toolbar.middleware.DebugToolbarMiddleware", #!
 ]
 
 ROOT_URLCONF = 'burger_meat.urls'
@@ -122,6 +127,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+SITE_ID = 1
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
@@ -150,3 +156,8 @@ SOCIAL_AUTH_VK_OAUTH2_KEY = '7795923'
 SOCIAL_AUTH_VK_OAUTH2_SECRET = 'FV6Sys4YgArFK2VPRVX9'
 
 CART_SESSION_ID = 'cart'
+
+
+INTERNAL_IPS = [ #!
+    "127.0.0.1",
+]
