@@ -26,6 +26,7 @@ SECRET_KEY = 'n=-=0@xm+g=a&t$(z2fpdvk+%tr&!p3-j_biu$r(r!h+or(5bb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1','192.168.0.11','*']
 
 
@@ -46,7 +47,7 @@ INSTALLED_APPS = [
     'orders.apps.OrdersConfig',
     'django.contrib.sites',
     'django.contrib.flatpages',
-    'debug_toolbar',  #!
+   # 'debug_toolbar',  #!
 
 ]
 
@@ -59,7 +60,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware', #!
-    "debug_toolbar.middleware.DebugToolbarMiddleware", #!
+    #"debug_toolbar.middleware.DebugToolbarMiddleware", #!
 ]
 
 ROOT_URLCONF = 'burger_meat.urls'
@@ -137,6 +138,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
@@ -144,7 +146,7 @@ LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'profile'
 LOGOUT_URL = 'menu'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
@@ -158,6 +160,6 @@ SOCIAL_AUTH_VK_OAUTH2_SECRET = 'FV6Sys4YgArFK2VPRVX9'
 CART_SESSION_ID = 'cart'
 
 
-INTERNAL_IPS = [ #!
-    "127.0.0.1",
-]
+# INTERNAL_IPS = [ #!
+#     "127.0.0.1",
+# ]
