@@ -27,7 +27,7 @@ SECRET_KEY = 'n=-=0@xm+g=a&t$(z2fpdvk+%tr&!p3-j_biu$r(r!h+or(5bb'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1','192.168.0.11','*']
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1','192.168.0.13','*']
 
 
 # Application definition
@@ -146,7 +146,7 @@ LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'profile'
 LOGOUT_URL = 'menu'
 
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
@@ -156,6 +156,7 @@ AUTHENTICATION_BACKENDS = [
 
 SOCIAL_AUTH_VK_OAUTH2_KEY = '7795923'
 SOCIAL_AUTH_VK_OAUTH2_SECRET = 'FV6Sys4YgArFK2VPRVX9'
+
 
 CART_SESSION_ID = 'cart'
 

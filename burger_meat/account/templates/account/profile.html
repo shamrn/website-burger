@@ -4,7 +4,39 @@
     <h1 class="title-profile">Личный кабинет</h1>
     <div class="container container-profile">
         <div class="info-profile">
-            <a class="nav-link nav-link-logout" href="{% url 'logout' %}?next={% url 'menu' %}">Выйти</a>
+            <div class="pers-info">
+                <h2 class="pers-info-title">Личная информация</h2>
+                <p>У вас {{ profile.bonuses }} баллов</p>
+            <form class="" action="." method="post">
+                <input class="input-login input-login-profile" name="name" value="{% if profile.name %} {{ profile.name }} {% else %} ФИО {% endif %}"><br>
+                <input class="input-login input-login-profile" name="address" value="{% if profile.address %} {{ profile.address }} {% else %} Адрес доставки {% endif %}"><br>
+                <input class="input-login input-login-profile" name="phone" value="{% if profile.phone %} {{ profile.phone }} {% else %} Номер {% endif %}"><br>
+                <input class="input-login input-login-submit" type="submit" value="Заполнить">
+                {% csrf_token %}
+            </form>
+            </div>
+            <div class="orders-info">
+                <h2>Ваши заказы</h2>
+                <table class="orders-profile">
+                <tbody>
+                    {% if orders|length == 0 %}
+                    <tr class="orders-profile-item">
+                            <td class="orders-profile-link">У вас нет заказов</td>
+                    </tr>
+                    {% else %}
+                    {% for item in orders %}
+                        <tr class="orders-profile-item">
+                            <td class="orders-profile-link">Заказ от {{ item.order.created }}</td>
+                            <td class="orders-profile-link">{{ item.product.name }}</td>
+                            <td class="orders-profile-link">{{ item.quantity }}x</td>
+                            <td class="orders-profile-link">{{ item.get_cost }} руб.</td>
+                        </tr>
+                    {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+            </div>
+            <a class="nav-link nav-link-logout profile-logout" href="{% url 'logout' %}?next={% url 'menu' %}">Выйти</a>
         </div>
     </div>
 </section>

@@ -32,3 +32,6 @@ class OrderItem(models.Model):
 
     class Meta:
         verbose_name = 'Товар'
+
+    def get_cost(self):
+        return self.price * self.quantity

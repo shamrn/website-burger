@@ -609,9 +609,44 @@ ul{
 }
 
 .info-profile{
-
+    display:flex;
+    margin-left:4vw;
+    margin-top:4vw;
+    justify-content:space-between;
+}
+.pers-info{
+    text-align:center;
 }
 
+.pers-info-title{
+    line-height:2.5vw;
+}
+
+.input-login-profile{
+    padding:auto;
+}
+.orders-profile{
+    margin-left:4vw;
+    margin-top:5vw;
+    padding:1vw;
+    background: rgba(192, 182, 182,0.8);
+    border-radius:3vw;
+    color:black;
+}
+
+
+.orders-profile-link{
+    padding:.8vw;
+    font-size:0.8vw
+}
+.orders-info{
+    text-align:center;
+}
+
+.profile-logout{
+    margin-right:4vw;
+    font-size:1.4vw;
+}
 /*    section-order     */
 
 .container-order{
@@ -654,6 +689,7 @@ ul{
     word-spacing:0.2vw;
     line-height:3.5vw;
 }
+
 /*       menu adaptiv mobile */
 
 @media screen and (max-width: 768px) {

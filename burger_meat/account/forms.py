@@ -35,6 +35,12 @@ class UserRegistrationForm(forms.ModelForm):
             raise forms.ValidationError('Пароль не совпадает')
         return cd['password2']
 
+class UserEditProfile(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ('name', 'address','phone')
+
+
 
 class DivErrorList(ErrorList):
     def __str__(self):
@@ -43,3 +49,4 @@ class DivErrorList(ErrorList):
     def as_divs(self):
         if not self: return ''
         return ''.join(['%s' % e for e in self])
+

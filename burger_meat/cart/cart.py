@@ -54,3 +54,6 @@ class Cart:
     def clear(self):
         del self.session[settings.CART_SESSION_ID]
         self.save()
+
+    def get_bonuses(self):
+        return self.get_total_price() / 100 * 15

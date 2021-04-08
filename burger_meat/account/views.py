@@ -1,11 +1,24 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegistrationForm,DivErrorList
+from .forms import UserRegistrationForm,DivErrorList,UserEditProfile
 from .models import Profile
+from orders.models import Order,OrderItem
+from .auth_vk import auth_vk
 
 @login_required
 def profile(request):
-    return render(request,'account/profile.html',{'section':'profile'})
+    user = request.user
+    auth_vk(user)
+    form = UserEditProfile()
+    profile = Profile.objects.get(user=user)
+    orders = OrderItem.objects.filter(order__user=profile) #Order.objects.filter(user=profile)
+    if request.method == 'POST':
+        edit_form = UserEditProfile(request.POST)
+        if edit_form.is_valid():
+            cd = edit_form.cleaned_data
+            profile.name,profile.address,profile.phone = cd['name'] , cd['address'], cd['phone']
+            profile.save()
+    return render(request,'account/profile.html',{'profile':profile,'form':form,'orders':orders})
 
 
 def register(request):

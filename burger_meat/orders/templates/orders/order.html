@@ -22,6 +22,9 @@
                 </table>
         </div>
         <div class="order-form">
+            {% if request.user.is_authenticated %}
+             <h3  class="order-info">Для завершения оформления проверьте форму</h3>
+            {% else %}
             <h3 class="order-info">
                 Для завершения оформления заполните форму или войдите в аккаунт,
                 за каждую покупку вам начисляется 15% баллов от общей суммы заказа,баллы можно менять на еду
@@ -44,12 +47,13 @@
             Войти
         </a></p>
             </h3>
-            <form action="." method="post">
-                {% for item in form %}
-                <p>{{ item }}</p>
-               {% csrf_token %}
-                {% endfor %}
-                <p><input class="input-login input-login-submit" type="submit" value="Отправить"></p>
+            {% endif %}
+         <form class="" action="." method="post">
+                <input class="input-login input-login-profile" name="name" value="{% if profile.name %} {{ profile.name }} {% else %} ФИО {% endif %}"><br>
+                <input class="input-login input-login-profile" name="address" value="{% if profile.address %} {{ profile.address }} {% else %} Адрес доставки {% endif %}"><br>
+                <input class="input-login input-login-profile" name="phone" value="{% if profile.phone %} {{ profile.phone }} {% else %} Номер {% endif %}"><br>
+                <input class="input-login input-login-submit" type="submit" value="Отправить">
+                {% csrf_token %}
             </form>
         </div>
     </div>
